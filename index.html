@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BelaFit Store - Moda Fitness Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'], display: ['Oswald', 'sans-serif'] },
+                    colors: { neon: { pink: '#ff2a85', purple: '#8a2be2', dark: '#0f0c29', darker: '#090717' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .diagonal-bg { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+        .text-outline { -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); color: transparent; }
+        .modal { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal-content { transform: scale(0.9); transition: all 0.3s ease; }
+        .modal.active .modal-content { transform: scale(1); }
+    </style>
+</head>
+<body class="bg-neon-darker text-white antialiased overflow-x-hidden selection:bg-neon-pink selection:text-white">
+
+    <header class="absolute top-0 w-full z-50 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-display font-bold text-3xl tracking-widest uppercase italic text-white drop-shadow-[0_0_10px_rgba(255,42,133,0.5)]">
+                Bela<span class="text-neon-pink">Fit</span>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="document.getElementById('modal-login').classList.add('active')" class="font-display tracking-widest uppercase text-sm border border-white/30 px-6 py-2 hover:bg-white hover:text-neon-dark transition">Login</button>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="bg-gradient-to-r from-neon-pink to-neon-purple text-white font-display tracking-widest uppercase text-sm px-6 py-2 hover:scale-105 transition transform shadow-[0_0_20px_rgba(255,42,133,0.4)]">Comprar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sec 1: Hero -->
+    <section class="relative min-h-[90vh] diagonal-bg bg-gradient-to-br from-neon-dark via-[#24133b] to-neon-purple pb-32">
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Fitness Model" class="w-full h-full object-cover object-top" />
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 pt-40 flex flex-col md:flex-row items-center justify-between">
+            <div class="w-full md:w-1/2" data-aos="fade-right">
+                <h1 class="font-display text-7xl md:text-8xl font-bold uppercase italic leading-[0.85] mb-6">
+                    Mova-se<br><span class="text-neon-pink">Com</span><br><span class="text-outline text-6xl md:text-8xl">Poder</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 font-light mb-10 max-w-md border-l-4 border-neon-pink pl-4">
+                    Moda fitness premium que modela o seu corpo, te dá sustentação extrema e garante zero transparência no treino.
+                </p>
+                <button onclick="document.getElementById('modal-cad').classList.add('active')" class="bg-white text-neon-dark font-display font-bold uppercase tracking-widest px-8 py-4 hover:bg-gray-200 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    Ver Coleção Nova
+                </button>
+            </div>
+            <div class="w-full md:w-1/2 mt-16 md:mt-0 relative" data-aos="fade-left">
+                <div class="absolute inset-0 bg-neon-pink rounded-full blur-[100px] opacity-30"></div>
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Legging" class="relative z-10 w-full max-w-sm mx-auto rounded-[2rem] border-2 border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition duration-500" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 2: Features -->
+    <section class="py-20 -mt-20 relative z-20 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-neon-dark/90 backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-neon-pink transition" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl mb-4 text-neon-pink">⚡</div>
+                <h3 class="font-display text-xl uppercase tracking-wider mb-2">Alta Compressão</h3>
+                <p class="text-gray-400 text-sm font-light">Tecido encorpado que não marca, modela a silhueta e estimula a circulação durante os exercícios mais intensos.</p>
+            </div>
+            <div class="bg-neon-dark/90 backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-neon-pink transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl mb-4 text-neon-purple">💧</div>
+                <h3 class="font-display text-xl uppercase tracking-wider mb-2">Secagem Rápida</h3>
+                <p class="text-gray-400 text-sm font-light">Tecnologia dry fit avançada. O suor evapora rápido e você continua seca e confortável do início ao fim.</p>
+            </div>
+            <div class="bg-neon-dark/90 backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-neon-pink transition" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl mb-4 text-white">✨</div>
+                <h3 class="font-display text-xl uppercase tracking-wider mb-2">Zero Transparência</h3>
+                <p class="text-gray-400 text-sm font-light">Faça agachamentos sem medo. Nossas leggings possuem fios duplos super opacos que garantem sua segurança.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 3: Products / Gallery -->
+    <section class="py-16 max-w-7xl mx-auto px-6">
+        <h2 class="font-display text-4xl md:text-5xl font-bold uppercase italic text-center mb-16">
+            Nossos <span class="text-neon-pink">Best Sellers</span>
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="group relative rounded-2xl overflow-hidden" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Look 1" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-neon-darker to-transparent opacity-80"></div>
+                <div class="absolute bottom-4 left-4">
+                    <p class="font-display text-xl uppercase font-bold text-white">Conjunto Power</p>
+                    <p class="text-neon-pink font-bold">R$ 149,90</p>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Look 2" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-neon-darker to-transparent opacity-80"></div>
+                <div class="absolute bottom-4 left-4">
+                    <p class="font-display text-xl uppercase font-bold text-white">Top Sustentação</p>
+                    <p class="text-neon-pink font-bold">R$ 79,90</p>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Look 3" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-neon-darker to-transparent opacity-80"></div>
+                <div class="absolute bottom-4 left-4">
+                    <p class="font-display text-xl uppercase font-bold text-white">Legging Zero Transp.</p>
+                    <p class="text-neon-pink font-bold">R$ 119,90</p>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Look 4" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-neon-darker to-transparent opacity-80"></div>
+                <div class="absolute bottom-4 left-4">
+                    <p class="font-display text-xl uppercase font-bold text-white">Shorts Seamless</p>
+                    <p class="text-neon-pink font-bold">R$ 89,90</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec 4: Banner Strip -->
+    <section class="py-16 overflow-hidden relative bg-neon-pink mt-10">
+        <div class="flex whitespace-nowrap overflow-hidden items-center justify-center pointer-events-none">
+            <h2 class="font-display text-5xl md:text-7xl font-black uppercase italic text-white text-center">
+                TREINE COM ESTILO. SINTA-SE INCRÍVEL.
+            </h2>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neon-dark pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <div class="font-display text-3xl font-bold italic uppercase tracking-widest text-white mb-2">Bela<span class="text-neon-pink">Fit</span> Store</div>
+                <p class="text-gray-400 text-sm mb-2">Dúvidas? Fale conosco:</p>
+                <a href="mailto:contato@belafit.store" class="text-neon-pink font-bold hover:text-white transition">contato@belafit.store</a>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-3">Auditoria Reclame Aqui</p>
+                <a href="https://www.reclameaqui.com.br/empresa/belafit-store/sobre/" target="_blank" class="hover:scale-105 transition transform block">
+                    <img src="selo-ra.png" alt="Selo Reclame Aqui" class="h-14 object-contain bg-white rounded p-1" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-login" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="document.getElementById('modal-login').classList.remove('active')"></div>
+        <div class="modal-content bg-neon-dark border border-neon-pink/30 w-full max-w-sm rounded-3xl p-8 relative z-10 shadow-[0_0_50px_rgba(255,42,133,0.2)]">
+            <button onclick="document.getElementById('modal-login').classList.remove('active')" class="absolute top-6 right-6 text-gray-500 hover:text-white transition text-xl">&times;</button>
+            <h3 class="font-display text-3xl font-bold uppercase italic text-white mb-6">Login</h3>
+            <form onsubmit="event.preventDefault(); alert('Login efetuado! Vamos treinar?'); document.getElementById('modal-login').classList.remove('active');">
+                <input type="email" placeholder="E-mail" required class="w-full bg-black/50 border border-white/10 px-4 py-4 rounded-xl mb-4 outline-none focus:border-neon-pink text-white">
+                <input type="password" placeholder="Senha" required class="w-full bg-black/50 border border-white/10 px-4 py-4 rounded-xl mb-6 outline-none focus:border-neon-pink text-white">
+                <button type="submit" class="w-full bg-neon-pink text-white font-display font-bold tracking-widest uppercase py-4 rounded-xl hover:bg-pink-600 transition shadow-[0_0_15px_rgba(255,42,133,0.5)]">Acessar Conta</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-cad" class="modal fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="document.getElementById('modal-cad').classList.remove('active')"></div>
+        <div class="modal-content bg-neon-dark border border-neon-purple/30 w-full max-w-md rounded-3xl p-8 relative z-10 shadow-[0_0_50px_rgba(138,43,226,0.2)]">
+            <button onclick="document.getElementById('modal-cad').classList.remove('active')" class="absolute top-6 right-6 text-gray-500 hover:text-white transition text-xl">&times;</button>
+            <h3 class="font-display text-3xl font-bold uppercase italic text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple mb-6">Criar Conta</h3>
+            <form onsubmit="event.preventDefault(); alert('Conta criada! Aproveite as novidades.'); document.getElementById('modal-cad').classList.remove('active');">
+                <input type="text" placeholder="Nome" required class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl mb-3 outline-none focus:border-neon-purple text-white text-sm">
+                <input type="email" placeholder="E-mail" required class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl mb-3 outline-none focus:border-neon-purple text-white text-sm">
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <input type="password" placeholder="Senha" required class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl outline-none focus:border-neon-purple text-white text-sm">
+                    <input type="password" placeholder="Confirmar" required class="w-full bg-black/50 border border-white/10 px-4 py-3 rounded-xl outline-none focus:border-neon-purple text-white text-sm">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-neon-pink to-neon-purple text-white font-display font-bold tracking-widest uppercase py-4 rounded-xl hover:scale-[1.02] transition shadow-[0_0_15px_rgba(138,43,226,0.5)]">Finalizar Cadastro</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, offset: 50 });</script>
+</body>
+</html>
